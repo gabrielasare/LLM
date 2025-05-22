@@ -1,3 +1,8 @@
+'''
+Editing resumes using OpenAI API
+
+'''
+
 # imports
 
 import os
