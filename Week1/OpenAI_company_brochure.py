@@ -120,8 +120,6 @@ def create_and_stream_brochure(company_name, url, system_prompt, link_system_pro
         update_display(Markdown(response), display_id=display_handle.display_id)
 
 def main():
-    # sample_site = Website("https://about.netflix.com")
-    # print(sample_site.links)
 
     link_system_prompt = "You are provided with a list of links found on a webpage. \
     You are able to decide which of the links would be most relevant to include in a brochure about the company, \
