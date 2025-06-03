@@ -192,7 +192,14 @@ def talker(message):
     audio = AudioSegment.from_file(audio_stream, format="mp3")
     play(audio)
 
-
+# for transcribing audio into text
+def transcribe_audio(audio_file):
+    with open(audio_file, "rb") as f:
+        transcript = openai.audio.transcriptions.create(
+            model="whisper-1",
+            file=f
+        )
+    return transcript.text
 
 '''
 TODO: Try to make a translator agent using OLLAMA for translating languages to other languages
