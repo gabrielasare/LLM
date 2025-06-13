@@ -114,7 +114,6 @@ def chat(history):
 
 
 # for handling tool responses and taking the appropriate action
-
 def handle_tool_call(message):
     tool_call = message.tool_calls[0]
     arguments = json.loads(tool_call.function.arguments)
@@ -146,8 +145,8 @@ gr.ChatInterface(fn=chat, type="message").launch()
 
 
 ''' 
-  IMAGE
-  function for generating image using DALL-E-3 model behind GPT-4o
+    AGENT for IMAGE Generation
+    function for generating image using DALL-E-3 model behind GPT-4o
 '''
 def artist(city):
     image_response = openai.images.generate(
@@ -162,10 +161,10 @@ def artist(city):
     return Image.open(BytesIO(image_data))
 
 image = artist("New York City")
-
+#display(image) # this for displaying images in jupyterLab
 
 '''
-AUDIO
+AGENT AUDIO
 
 Install homebrew if you don't have it already by running this in a Terminal window and following any instructions:
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
